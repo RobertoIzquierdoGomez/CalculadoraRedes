@@ -1,4 +1,3 @@
-
 /* ************************************************************************************
 
 ************* OBSOLETAS *************
@@ -36,6 +35,7 @@ function cogerIp(){
 
 function limpiarIp() {
     document.getElementById("resultadoTipoIp").innerText = "";
+    document.getElementById("ip").value = "";
 }
 
 // Función para transformar de decimal a binario
@@ -165,17 +165,42 @@ function mostrarIpYTipo() {
     let tipoIp;
     if (ipValida()) {
         ip = anadirIp();
-        if(ip[0] < 128){
+        if (ip[0] < 128) {
             tipoIp = "clase A";
         } else if (ip[0] < 192) {
-            tipoIp = "clase B"
+            tipoIp = "clase B";
         } else {
-            tipoIp = "clase C"
+            tipoIp = "clase C";
         }
-        document.getElementById("resultadoTipoIp").innerHTML = `La ip <strong>${document.getElementById("ip").value}</strong> es de ${tipoIp}`;
+
+        /* Mostramos la IP y su clase. También hacemos HTML para calcular subredes */
+        document.getElementById("resultadoTipoIp").innerHTML = `
+        <p>La ip <strong>${document.getElementById("ip").value}</strong> es de ${tipoIp}</p>
+        <input type="number" class="inputUsuarios" id="inputSubredes" placeholder="Nº Subredes">
+        <div id="subredesContainer"></div>
+        `;
+
+        // Añadir un evento para actualizar las subredes dinámicamente
+        const inputSubredes = document.getElementById("inputSubredes");
+        inputSubredes.addEventListener("input", () => {
+            document.getElementById("subredesContainer").innerHTML = subredes(inputSubredes.value);
+        });
 
     } else {
         document.getElementById("resultadoTipoIp").innerText = "Tienes que introducir una IP válida. Por ejemplo: 192.168.1.1";
     }
 }
+
+function subredes(value) {
+    let htmlSubredes = ``;
+    if (value && !isNaN(value) && value > 0) {
+        htmlSubredes += `
+        <select id="opciones" class="inputUsuarios" name="opciones" style="margin-top: 15px;">
+            ${Array.from({ length: value }, (_, i) => `<option value="${i + 1}">${i + 1}</option>`).join('')}
+        </select>
+        <label>Elige la subred</label>`;
+    }
+    return htmlSubredes;
+}
+
 

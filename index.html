@@ -4,62 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de redes</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="/Styles/style.css">
+    <script src="/Scripts/main.js" defer></script>
+    <script src="/Scripts/inicio.js" defer></script>
+    <script src="/Scripts/explication.js" defer></script>
+    <script src="/Scripts/transformator.js" defer></script>
+    <script src="/Scripts/calculator.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Calculadora de redes</h1>
+        <nav id="menu">
+            <div><a href="#" id="aInicio">Inicio</a></div>
+            <div><a href="#" id="aExplicacion">Explicación</a></div>
+            <div><a href="#" id="aTransformador">Transformador Binario/Decimal</a></div>
+            <div><a href="#" id="aCalculadora">Calculadora de redes</a></div>
+        </nav>
     </header>
-    <main>
-        <div id="intro">
-            <h2> Explicación</h2>
-            <p> Los rangos de IP van desde <strong>0.0.0.0</strong> a <strong>255.255.255.255</strong> en este proyecto nos centramos únicamente en IPv4</p>
-            <p>En función de la IP se dividen en distintas clases que sirven para identificar su <strong>máscara de red.</strong> La máscara de red sirve para identificar qué parte de la IP pertenece a <strong class="red">red</strong> y qué parte a <strong class="host">host.</strong></p>
-            <h3>Clases de IP</h3>
-            <ul>
-                <li><strong>Clase A:</strong> rango de <strong class="red">0</strong>.<strong class="host">0</strong>.<strong class="host">0</strong>.<strong class="host">0</strong> a <strong class="red">127</strong>.<strong class="host">255</strong>.<strong class="host">255</strong>.<strong class="host">255</strong></li>
-                    <ul>
-                        <li><strong>Máscara de red: </strong> <strong class="red">255</strong>.<strong class="host">0</strong>.<strong class="host">0</strong>.<strong class="host">0</strong></li>
-                    </ul>
-                <li><strong>Clase B:</strong> rango de <strong class="red">128</strong>.<strong class="host">0</strong>.<strong class="host">0</strong>.<strong class="host">0</strong> a <strong class="red">191</strong>.<strong class="host">255</strong>.<strong class="host">255</strong>.<strong class="host">255</strong></li>
-                    <ul>
-                        <li><strong>Máscara de red: </strong> <strong class="red">255</strong>.<strong class="host">255</strong>.<strong class="host">0</strong>.<strong class="host">0</strong> </li>
-                    </ul>
-                <li><strong>Clase C:</strong> rango de <strong class="red">192</strong>.<strong class="host">0</strong>.<strong class="host">0</strong>.<strong class="host">0</strong> a <strong class="red">224</strong>.<strong class="host">255</strong>.<strong class="host">255</strong>.<strong class="host">255</strong></li>
-                    <ul>
-                        <li><strong>Máscara de red: </strong> </strong> <strong class="red">255</strong>.<strong class="host">255</strong>.<strong class="host">255</strong>.<strong class="host">0</strong> </li>
-                    </ul>
-            </ul>
-            
-            
-        </div>
-        <!--Zona boton transformación binario-->
-        <div id="main-aplication">
-            <div id="tranformadorBinarioDecimal">
-                <h3>Transformador Binario/Decimal</h3>
-            <!--Valorar marcar una opcion por defecto "checked" -->
-                <input type="radio" id="decimalBinario" name="transformador" value="decimalBinario" checked>
-                <label for="rojo">Decimal a Binario</label>
-                <input type="radio" id="binarioDecimal" name="transformador" value="binarioDecimal">
-                <label for="azul">Binario a Decimal</label><br>
-                <input id="inputTransformador" class="inputUsuarios" type="number" name="transformador" placeholder="Introduce un número"><br>
-                <button onclick="transformar()">Calcular</button>
-                <button onclick="limpiarTransformador()">Limpiar</button>
-                <strong><p id="resultadoTransformador">Resultado</p></strong>
-            </div>
-            <div id="calculadoraRedes">
-                <h3>Calculadora de redes</h3>
-                <p>Introduce una IP para mostrarte su tipo.</p>
-                <input type="text" class="inputUsuarios" id="ip" placeholder="Introduce una IP">
-                <button type="button" onclick="mostrarIpYTipo()">Calcular</button>
-                <button type="button" onclick="limpiarIp()">Limpiar</button>
-                <p id="resultadoTipoIp"></p>
-            </div>
-        </div>
+    <main id="main">
+        <p>Esta página está diseñada para ayudarte a comprender y trabajar con redes IPv4. Aquí encontrarás herramientas como un transformador binario/decimal y una calculadora de redes, además de explicaciones detalladas sobre las clases de IP y sus máscaras de red.</p>
     </main>
     <footer>
-        <p>Desarrollado por: <a href="  ">Roberto Izquierdo</a></p>
+        <p><a href="https://www.linkedin.com/in/robertoizquierdogomez/">Roberto Izquierdo </a> &copy; 2025 </p>
     </footer>
 </body>
 </html>
