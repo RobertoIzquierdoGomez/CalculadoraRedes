@@ -2,6 +2,7 @@ document.querySelector("#aInicio").addEventListener("click", function() {
     document.getElementById("main").innerHTML = "";
     document.getElementById("main").innerHTML = `
         <div id="startContent">
+            <h1>Calculadora de Redes IP y Conversor de Binario a Decimal</h1>
             <p>Bienvenido a esta web dedicada al mundo de las redes informáticas.</p>
             <p>Este sitio forma parte de un proyecto personal dentro del ciclo de Desarrollo de Aplicaciones Multiplataforma (DAM), y su objetivo es ofrecer una serie de herramientas y explicaciones que te ayudarán a comprender mejor algunos conceptos clave relacionados con las redes.</p>
             </p>Aquí encontrarás:</p>
